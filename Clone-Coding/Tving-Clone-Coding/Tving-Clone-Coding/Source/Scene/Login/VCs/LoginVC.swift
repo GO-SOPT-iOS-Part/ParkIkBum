@@ -2,11 +2,9 @@ import UIKit
 import SnapKit
 import Then
 
-class LoginVC: UIViewController {
+class LoginVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .green
-
     }
 }
