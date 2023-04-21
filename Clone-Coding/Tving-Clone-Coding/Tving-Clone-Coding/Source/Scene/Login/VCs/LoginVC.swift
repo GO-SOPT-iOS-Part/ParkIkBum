@@ -4,11 +4,13 @@ import Then
 
 class LoginVC: UIViewController {
     private var email: String = ""
+    private var nickName: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setLayout()
         self.isLoginEnable()
+        self.addTargetToMakeNickNameButton()
     }
     
     private func setLayout() {
@@ -21,6 +23,25 @@ class LoginVC: UIViewController {
     
     
     private let loginView = LoginView()
+}
+extension LoginVC: GetNickNameDelegate{
+    func getNickName(nickName: String) {
+        self.nickName = nickName
+    }
+}
+
+private extension LoginVC {
+    private func addTargetToMakeNickNameButton() {
+        self.loginView.makeNickNameButton.addTarget(self,
+                                                    action: #selector(didMakeNickNameButtonTapped),
+                                                    for: .touchUpInside)
+    }
+    @objc private func didMakeNickNameButtonTapped() {
+        let makeNickNameVC = MakeNickNameVC()
+        makeNickNameVC.delegate = self
+        makeNickNameVC.modalPresentationStyle = .overFullScreen
+        self.present(makeNickNameVC, animated: true)
+    }
 }
 
 private extension LoginVC {
@@ -65,7 +86,11 @@ private extension LoginVC {
     @objc private func didLoginButtonTapped() {
         if let navigationController = self.navigationController {
             let successVC = LoginSuccessVC()
-            successVC.bindDescriptionTitle(description: self.email)
+            if self.nickName == "" {
+                successVC.bindDescriptionTitle(description: self.email)
+            } else {
+                successVC.bindDescriptionTitle(description: self.nickName)
+            }
             navigationController.pushViewController(successVC,
                                                     animated: true)
         }
