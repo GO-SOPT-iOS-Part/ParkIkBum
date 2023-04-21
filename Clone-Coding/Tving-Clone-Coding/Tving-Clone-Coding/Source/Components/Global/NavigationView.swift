@@ -9,8 +9,12 @@ class NavigationView: UIView {
         super.init(coder: coder)
     }
     
-    init(navigationController: UINavigationController) {
+    init() {
         super.init(frame: .zero)
+        self.setLayout()
+    }
+    
+    internal func initNavigationController(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     

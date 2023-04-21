@@ -32,7 +32,12 @@
 		3638EDA729EA834F00BEC54D /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3638ED9E29EA834F00BEC54D /* Pretendard-Thin.otf */; };
 		3638EDAA29EA87D400BEC54D /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDA929EA87D400BEC54D /* ImageLiterals.swift */; };
 		3638EDAC29EA87E600BEC54D /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDAB29EA87E600BEC54D /* UIImage+.swift */; };
-		3638EDB029EA88E400BEC54D /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDAF29EA88E400BEC54D /* BaseVC.swift */; };
+		3638EDB429EA8D5100BEC54D /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDB329EA8D5100BEC54D /* BaseTextField.swift */; };
+		3638EDB729EA8F2500BEC54D /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDB629EA8F2500BEC54D /* EmailTextField.swift */; };
+		3638EDB929EA97FE00BEC54D /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDB829EA97FE00BEC54D /* PasswordTextField.swift */; };
+		3638EDBF29EA9BB700BEC54D /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDBE29EA9BB700BEC54D /* UIButton+.swift */; };
+		3638EDC229EA9EE700BEC54D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDC129EA9EE700BEC54D /* LoginView.swift */; };
+		3638EDC429EAA67C00BEC54D /* UIStackView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3638EDC329EAA67C00BEC54D /* UIStackView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +66,12 @@
 		3638ED9E29EA834F00BEC54D /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		3638EDA929EA87D400BEC54D /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
 		3638EDAB29EA87E600BEC54D /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
-		3638EDAF29EA88E400BEC54D /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		3638EDB329EA8D5100BEC54D /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		3638EDB629EA8F2500BEC54D /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		3638EDB829EA97FE00BEC54D /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		3638EDBE29EA9BB700BEC54D /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		3638EDC129EA9EE700BEC54D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3638EDC329EAA67C00BEC54D /* UIStackView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +148,6 @@
 		3638ED7C29EA7BF100BEC54D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				3638EDAE29EA88D300BEC54D /* BaseViewController */,
 				3638ED7D29EA7C0600BEC54D /* Login */,
 			);
 			path = Scene;
@@ -147,8 +156,8 @@
 		3638ED7D29EA7C0600BEC54D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3638EDC029EA9EDD00BEC54D /* View */,
 				3638ED8929EA7F7100BEC54D /* VCs */,
-				3638ED8829EA7F6800BEC54D /* View */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -157,11 +166,13 @@
 			isa = PBXGroup;
 			children = (
 				3638ED8229EA7E8400BEC54D /* UIView+.swift */,
+				3638EDBE29EA9BB700BEC54D /* UIButton+.swift */,
 				3638ED8429EA7EE000BEC54D /* UITextField+.swift */,
 				3638ED8629EA7F0500BEC54D /* String+.swift */,
 				3638ED8E29EA806E00BEC54D /* UIColor+.swift */,
 				3638ED9029EA807700BEC54D /* UIFont+.swift */,
 				3638EDAB29EA87E600BEC54D /* UIImage+.swift */,
+				3638EDC329EAA67C00BEC54D /* UIStackView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -169,17 +180,10 @@
 		3638ED8129EA7E7600BEC54D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3638ED8B29EA7FA200BEC54D /* Login */,
+				3638EDB529EA8F1600BEC54D /* Login */,
 				3638ED8A29EA7F9C00BEC54D /* Global */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		3638ED8829EA7F6800BEC54D /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3638ED8929EA7F7100BEC54D /* VCs */ = {
@@ -194,15 +198,9 @@
 			isa = PBXGroup;
 			children = (
 				3638ED8C29EA7FD300BEC54D /* NavigationView.swift */,
+				3638EDB329EA8D5100BEC54D /* BaseTextField.swift */,
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		3638ED8B29EA7FA200BEC54D /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		3638ED9229EA808100BEC54D /* Utils */ = {
@@ -237,12 +235,21 @@
 			path = Literals;
 			sourceTree = "<group>";
 		};
-		3638EDAE29EA88D300BEC54D /* BaseViewController */ = {
+		3638EDB529EA8F1600BEC54D /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3638EDAF29EA88E400BEC54D /* BaseVC.swift */,
+				3638EDB629EA8F2500BEC54D /* EmailTextField.swift */,
+				3638EDB829EA97FE00BEC54D /* PasswordTextField.swift */,
 			);
-			path = BaseViewController;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3638EDC029EA9EDD00BEC54D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3638EDC129EA9EE700BEC54D /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,16 +341,21 @@
 			files = (
 				3638ED8D29EA7FD300BEC54D /* NavigationView.swift in Sources */,
 				3638ED9129EA807700BEC54D /* UIFont+.swift in Sources */,
+				3638EDB729EA8F2500BEC54D /* EmailTextField.swift in Sources */,
+				3638EDB429EA8D5100BEC54D /* BaseTextField.swift in Sources */,
 				3638ED8F29EA806E00BEC54D /* UIColor+.swift in Sources */,
 				3638ED8329EA7E8400BEC54D /* UIView+.swift in Sources */,
 				3638ED8529EA7EE000BEC54D /* UITextField+.swift in Sources */,
+				3638EDC429EAA67C00BEC54D /* UIStackView+.swift in Sources */,
 				3638EDAA29EA87D400BEC54D /* ImageLiterals.swift in Sources */,
 				3638ED9429EA808C00BEC54D /* ScreenUtils.swift in Sources */,
 				3638ED6029EA7B5A00BEC54D /* AppDelegate.swift in Sources */,
-				3638EDB029EA88E400BEC54D /* BaseVC.swift in Sources */,
+				3638EDC229EA9EE700BEC54D /* LoginView.swift in Sources */,
 				3638ED6229EA7B5A00BEC54D /* SceneDelegate.swift in Sources */,
+				3638EDBF29EA9BB700BEC54D /* UIButton+.swift in Sources */,
 				3638EDAC29EA87E600BEC54D /* UIImage+.swift in Sources */,
 				3638ED8729EA7F0500BEC54D /* String+.swift in Sources */,
+				3638EDB929EA97FE00BEC54D /* PasswordTextField.swift in Sources */,
 				3638ED7F29EA7CD000BEC54D /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
