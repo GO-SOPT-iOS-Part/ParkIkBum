@@ -78,9 +78,9 @@ class LoginView: UIView {
         $0.text = "TVING ID 로그인"
     }
     
-    private let emailTextField = EmailTextField()
-    private let passwordTextField = PasswordTextField()
-    private let loginButton = UIButton().then {
+    internal let emailTextField = EmailTextField()
+    internal let passwordTextField = PasswordTextField()
+    internal let loginButton = UIButton().then {
         $0.backgroundColor = .clear
         $0.layer.borderColor = UIColor.tivingGray40.cgColor
         $0.layer.borderWidth = 1
@@ -108,7 +108,7 @@ class LoginView: UIView {
         $0.setTitleColor(.tivingGray30, for: .normal)
     }
     
-    private let makeNickNameButton = UIButton().then {
+    internal let makeNickNameButton = UIButton().then {
         $0.setTitle("닉네임 만들러 가기", for: .normal)
         $0.setTitleColor(.tivingGray20, for: .normal)
         $0.titleLabel?.font = .pretendedSemiBoldFont(ofSize: 14)

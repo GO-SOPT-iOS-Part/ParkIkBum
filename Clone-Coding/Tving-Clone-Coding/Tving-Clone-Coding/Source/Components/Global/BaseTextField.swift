@@ -15,6 +15,11 @@ class BaseTextField: UITextField {
                        action: #selector(self.textFieldDidEditing(_:)),
                        for: .editingChanged)
         self.setPaddingConfig()
+        self.setConfig()
+    }
+    
+    private func setConfig() {
+        self.textColor = .tivingGray20
     }
     
     private func changeBorderColor(color: CGColor,
