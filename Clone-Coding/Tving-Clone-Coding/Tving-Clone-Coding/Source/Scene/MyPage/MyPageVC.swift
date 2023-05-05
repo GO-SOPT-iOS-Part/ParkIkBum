@@ -12,9 +12,15 @@ class MyPageVC: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MyPageTVC.self, forCellReuseIdentifier: MyPageTVC.identifier)
+        self.tableView.register(MyPageSectionHeader.self,
+                                forHeaderFooterViewReuseIdentifier: MyPageSectionHeader.identifier)
         self.tableView.tableHeaderView = MyPageHeaderView(frame: .init(origin: .zero,
                                                                        size: .init(width: UIScreen.main.bounds.width,
                                                                                    height: 434)))
+        self.tableView.tableFooterView = MyPageFooterView(frame: .init(origin: .zero,
+                                                                       size: .init(width: UIScreen.main.bounds.width,
+                                                                                   height: ScreenUtils.getWidth(55))))
+        self.tableView.contentInset = .init(top: 0, left: 0, bottom: 100, right: 0)
     }
     
     private func setLayout() {
@@ -47,5 +53,14 @@ extension MyPageVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MyPageTVC.identifier) as? MyPageTVC else {return UITableViewCell()}
         cell.bindData(title: myPageMokData.data[indexPath.section].data[indexPath.row].title)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section != 0 {
+            guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: MyPageSectionHeader.identifier) as? MyPageSectionHeader else {return UIView()}
+            return header
+        } else {
+            return nil
+        }
     }
 }

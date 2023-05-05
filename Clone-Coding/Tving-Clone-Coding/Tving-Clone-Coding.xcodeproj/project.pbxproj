@@ -58,6 +58,8 @@
 		36E60FE32A0535B4000FBCBC /* MyPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FE22A0535B4000FBCBC /* MyPageTVC.swift */; };
 		36E60FE52A053B34000FBCBC /* MyPageDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FE42A053B34000FBCBC /* MyPageDataModel.swift */; };
 		36E60FE72A053B6E000FBCBC /* MyPageMokData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FE62A053B6E000FBCBC /* MyPageMokData.swift */; };
+		36E60FE92A054D69000FBCBC /* MyPageSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FE82A054D69000FBCBC /* MyPageSectionHeader.swift */; };
+		36E60FEB2A054DBE000FBCBC /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FEA2A054DBE000FBCBC /* MyPageFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +114,8 @@
 		36E60FE22A0535B4000FBCBC /* MyPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageTVC.swift; sourceTree = "<group>"; };
 		36E60FE42A053B34000FBCBC /* MyPageDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageDataModel.swift; sourceTree = "<group>"; };
 		36E60FE62A053B6E000FBCBC /* MyPageMokData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMokData.swift; sourceTree = "<group>"; };
+		36E60FE82A054D69000FBCBC /* MyPageSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSectionHeader.swift; sourceTree = "<group>"; };
+		36E60FEA2A054DBE000FBCBC /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +376,8 @@
 			children = (
 				36E60FDE2A052E1B000FBCBC /* MyPageHeaderView.swift */,
 				36E60FE22A0535B4000FBCBC /* MyPageTVC.swift */,
+				36E60FE82A054D69000FBCBC /* MyPageSectionHeader.swift */,
+				36E60FEA2A054DBE000FBCBC /* MyPageFooterView.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				3638ED8D29EA7FD300BEC54D /* NavigationView.swift in Sources */,
 				3638ED9129EA807700BEC54D /* UIFont+.swift in Sources */,
 				3638EDB729EA8F2500BEC54D /* EmailTextField.swift in Sources */,
+				36E60FE92A054D69000FBCBC /* MyPageSectionHeader.swift in Sources */,
 				36E60FDC2A052D67000FBCBC /* MyPageVC.swift in Sources */,
 				3638EDF529F2D19B00BEC54D /* LoginSuccessVC.swift in Sources */,
 				3638EDB429EA8D5100BEC54D /* BaseTextField.swift in Sources */,
@@ -476,6 +483,7 @@
 				3638EDFB29F2D78B00BEC54D /* MakeNickNameView.swift in Sources */,
 				3638ED8329EA7E8400BEC54D /* UIView+.swift in Sources */,
 				3638EDF929F2D77100BEC54D /* MakeNickNameVC.swift in Sources */,
+				36E60FEB2A054DBE000FBCBC /* MyPageFooterView.swift in Sources */,
 				3638ED8529EA7EE000BEC54D /* UITextField+.swift in Sources */,
 				36E60FCF2A04399A000FBCBC /* HomeDataModel.swift in Sources */,
 				3638EDC429EAA67C00BEC54D /* UIStackView+.swift in Sources */,

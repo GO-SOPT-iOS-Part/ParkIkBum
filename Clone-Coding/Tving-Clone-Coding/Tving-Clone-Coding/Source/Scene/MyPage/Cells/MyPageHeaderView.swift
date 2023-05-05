@@ -29,7 +29,7 @@ class MyPageHeaderView: UITableViewHeaderFooterView {
         
         backButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().offset(ScreenUtils.getWidth(20))
             $0.width.height.equalTo(ScreenUtils.getWidth(24))
         }
         
