@@ -12,5 +12,14 @@ enum ImageLiterals {
     static var video4: UIImage { .load(name: "video4") }
     static var video5: UIImage { .load(name: "video5") }
     static var banner: UIImage { .load(name: "banner") }
+    static var icProfile: UIImage { .load(name: "icProfile") }
+    static var icTvN: UIImage { .load(name: "icTvN") }
+    static var icJtvc: UIImage { .load(name: "icJtvc") }
+    static var icTicket: UIImage { .load(name: "icTicket") }
+    static var icCash: UIImage { .load(name: "icCash") }
+    static var icSetting: UIImage { .load(name: "icSetting") }
+    static var icNoti: UIImage { .load(name: "icNoti") }
+    static var icLogo: UIImage { .load(name: "icLogo") }
+    static var icArrow: UIImage { .load(name: "icArrow") }
     
 }

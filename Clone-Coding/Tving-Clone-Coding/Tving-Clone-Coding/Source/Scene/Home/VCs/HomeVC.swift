@@ -28,17 +28,32 @@ class HomeVC: UIViewController {
                                      withReuseIdentifier: HomeCollectionSectionHeaderView.identifier)
         
     }
+    
     private func setCollectionViewLayout() {
         self.collectionView.setCollectionViewLayout(getLayout(), animated: false)
     }
     
+    private func pushToMyPageView() {
+        let myPageVC = MyPageVC()
+        self.navigationController?.pushViewController(myPageVC, animated: true)
+    }
+    
     private func setLayout() {
         self.navigationController?.navigationBar.isHidden = true
-        self.view.addSubViews([collectionView])
+        self.view.addSubViews([collectionView, navigationView])
         collectionView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.equalToSuperview()
         }
+        navigationView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(ScreenUtils.getWidth(94))
+        }
+        self.navigationView.profileTappedCompletion = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.pushToMyPageView()
+        }
     }
+    
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
         $0.backgroundColor = UIColor.black
@@ -46,12 +61,9 @@ class HomeVC: UIViewController {
         $0.showsVerticalScrollIndicator = false
         $0.contentInsetAdjustmentBehavior = .never
     }
+    private let navigationView = HomeNavigationView()
     
     func getLayout() -> UICollectionViewCompositionalLayout {
-        //헤더 사이즈 잡기
-        //데이터 모델 바꾸기
-        //레이아웃 수정
-        
         UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
             switch section {
             case 0:
@@ -68,7 +80,7 @@ class HomeVC: UIViewController {
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 let section = NSCollectionLayoutSection(group: group)
                 section.orthogonalScrollingBehavior = .groupPaging
-                section.contentInsets = .init(top: 0, leading: 0, bottom: 23, trailing: 0)
+                section.contentInsets = .init(top: 0, leading: 0, bottom: 40, trailing: 0)
                 return section
             case 1, 3, 5:
                 let itemSize = NSCollectionLayoutSize(

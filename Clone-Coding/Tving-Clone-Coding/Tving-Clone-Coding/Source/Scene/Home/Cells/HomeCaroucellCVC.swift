@@ -1,15 +1,9 @@
-//
-//  HomeCaroucellCVC.swift
-//  Tving-Clone-Coding
-//
-//  Created by 박익범 on 2023/05/05.
-//
-
 import UIKit
 
 class HomeCaroucellCVC: UICollectionViewCell {
-    private var data: [dataClass]?
     static let identifier: String = "HomeCaroucellCVC"
+    
+    private var data: [dataClass]?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -23,7 +17,7 @@ class HomeCaroucellCVC: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        collectionView.setContentOffset(.init(x: UIScreen.main.bounds.width + 1,
+        collectionView.setContentOffset(.init(x: UIScreen.main.bounds.width,
                                               y: self.collectionView.contentOffset.y),
                                         animated: false)
     }
@@ -52,7 +46,7 @@ class HomeCaroucellCVC: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = .init(width: UIScreen.main.bounds.width,
-                                height: ScreenUtils.getWidth(449))
+                                height: ScreenUtils.getWidth(498))
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         self.collectionView.setCollectionViewLayout(layout, animated: false)
@@ -65,14 +59,14 @@ class HomeCaroucellCVC: UICollectionViewCell {
         }
         pageController.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(ScreenUtils.getWidth(-40))
-            $0.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().offset(ScreenUtils.getWidth(30))
         }
     }
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then {
-        $0.contentInsetAdjustmentBehavior = .never
         $0.backgroundColor = .black
         $0.isPagingEnabled = true
+        $0.showsHorizontalScrollIndicator = false
     }
     private let pageController = UIPageControl().then {
         $0.transform = .init(scaleX: 0.5, y: 0.5)
@@ -103,7 +97,7 @@ extension HomeCaroucellCVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
     }
-
+    
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let data = data {
@@ -121,7 +115,6 @@ extension HomeCaroucellCVC: UICollectionViewDataSource {
             let row = indexPath.row - 1
             self.pageController.currentPage = row
         }
-        
     }
 }
 
