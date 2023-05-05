@@ -32,6 +32,7 @@ private extension LoginSuccessVC {
     }
     
     @objc private func didGoToMainButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
+        let homeVC = HomeVC()
+        self.navigationController?.pushViewController(homeVC, animated: true)
     }
 }

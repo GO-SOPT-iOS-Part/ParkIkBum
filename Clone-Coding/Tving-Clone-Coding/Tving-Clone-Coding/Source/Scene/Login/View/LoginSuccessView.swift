@@ -31,14 +31,14 @@ class LoginSuccessView: UIView {
         }
     }
     
-    private var logoImageView = UIImageView(image: UIImage(named: "logoTiving"))
-    internal var descriptionLabel = UILabel().then {
+    private let logoImageView = UIImageView(image: UIImage(named: "logoTiving"))
+    internal let descriptionLabel = UILabel().then {
         $0.font = .pretendeBoldFont(ofSize: 23)
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 0
     }
-    internal var goToMainButton = UIButton().then {
+    internal lazy var goToMainButton = UIButton().then {
         $0.backgroundColor = .tivingRed
         $0.setTitle("메인으로", for: .normal)
         $0.setTitleColor(.white, for: .normal)
