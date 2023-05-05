@@ -14,9 +14,16 @@ class MyPageVC: UIViewController {
         self.tableView.register(MyPageTVC.self, forCellReuseIdentifier: MyPageTVC.identifier)
         self.tableView.register(MyPageSectionHeader.self,
                                 forHeaderFooterViewReuseIdentifier: MyPageSectionHeader.identifier)
-        self.tableView.tableHeaderView = MyPageHeaderView(frame: .init(origin: .zero,
-                                                                       size: .init(width: UIScreen.main.bounds.width,
-                                                                                   height: 434)))
+        let myPageHeaderView = MyPageHeaderView(frame: .init(origin: .zero,
+                                                             size: .init(width: UIScreen.main.bounds.width,
+                                                                         height: 434)))
+        self.tableView.tableHeaderView = myPageHeaderView
+        myPageHeaderView.didBackButtonTappedCompletion = { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.navigationController?.popViewController(animated: true)
+            
+        }
+        
         self.tableView.tableFooterView = MyPageFooterView(frame: .init(origin: .zero,
                                                                        size: .init(width: UIScreen.main.bounds.width,
                                                                                    height: ScreenUtils.getWidth(55))))

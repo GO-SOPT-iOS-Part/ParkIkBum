@@ -1,7 +1,7 @@
 import UIKit
 
 class MyPageHeaderView: UITableViewHeaderFooterView {
-    
+    var didBackButtonTappedCompletion: (() -> Void)?
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -113,7 +113,15 @@ class MyPageHeaderView: UITableViewHeaderFooterView {
         
     }
     
-    private let backButton = UIButton().then {
+    @objc private func didBackButtonTapped() {
+        guard let completion = didBackButtonTappedCompletion else {return}
+        completion()
+    }
+    
+    private lazy var backButton = UIButton().then {
+        $0.addTarget(self,
+                     action: #selector(didBackButtonTapped),
+                     for: .touchUpInside)
         $0.setImage(ImageLiterals.icBack, for: .normal)
     }
     private let notiButton = UIButton().then {
