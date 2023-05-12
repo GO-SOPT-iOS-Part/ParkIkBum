@@ -24,9 +24,10 @@ class SeriesVideoCVC: UICollectionViewCell {
         self.titleLabel.text = ""
     }
     
-    internal func bindData(image: UIImage,
+    internal func bindData(image: String,
                            title: String) {
-        self.thumbnailImageView.image = image
+        guard let url = URL(string: image) else {return}
+        self.thumbnailImageView.kf.setImage(with: url)
         self.titleLabel.text = title
     }
     

@@ -3,6 +3,17 @@ import SnapKit
 import Then
 
 class HomeVC: UIViewController {
+    enum CellType {
+        case chanel
+        case video
+    }
+    
+    private var homeData: HomeDataModel?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getMovieList()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,27 +174,66 @@ class HomeVC: UIViewController {
     }
 }
 
+private extension HomeVC {
+    private func getMovieList() {
+        GetService.shared.getService(from: Config.baseURL + "/3/person/popular") {
+            (data: MovieDataModel?, error) in
+            guard let data = data else {
+                print( "error: \(error?.debugDescription)")
+                return
+            }
+            self.makeSectionData(data: data.results)
+            self.collectionView.reloadData()
+            print(self.homeData)
+        }
+    }
+    
+    private func makeSectionData(data: [Result]) {
+        self.homeData = .init(data: [.init(sectionTitle: "", data: returnKnownForData(knownForData: data[0].knownFor, type: .video)),
+                                     .init(sectionTitle: "티빙에서 꼭 봐야하는 콘텐츠", data: returnKnownForData(knownForData: data[1].knownFor, type: .video)),
+                                     .init(sectionTitle: "인기 LIVE 채널", data: returnKnownForData(knownForData: data[9].knownFor, type: .chanel, maker: data[9].name)),
+                                     .init(sectionTitle: "1화 무료! 파라마운트+ 인기 시리즈", data: returnKnownForData(knownForData: data[3].knownFor, type: .video)),
+                                     .init(sectionTitle: "", data: [.init(image: "", title: "", rank: nil, maker: nil, rating: nil)]),
+                                     .init(sectionTitle: "마술보다 더 신비로운 영화(신비로운 영화사전님)", data: returnKnownForData(knownForData: data[4].knownFor, type: .video))])
+    }
+    
+    private func returnKnownForData(knownForData: [KnownFor], type: CellType, maker: String = "") -> [dataClass]{
+        var sectionData: [dataClass] = []
+        for data in knownForData {
+            sectionData.append(.init(image: Config.baseImageURL + data.posterPath,
+                                     title: data.title ?? data.name ?? "",
+                                     rank: type == .video ? nil : data.voteCount,
+                                     maker: type == .video ? nil : maker,
+                                     rating: type == .video ? nil : Float(data.voteAverage)))
+        }
+        return sectionData
+    }
+}
+
 extension HomeVC: UICollectionViewDelegate {
     
 }
 extension HomeVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return homeMokData.data.count
+        guard let homeData = homeData else {return 0}
+        return homeData.data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                            withReuseIdentifier: HomeCollectionSectionHeaderView.identifier,
                                                                            for: indexPath) as? HomeCollectionSectionHeaderView else {return UICollectionReusableView()}
-        header.bindData(title: homeMokData.data[indexPath.section].sectionTitle)
+        guard let homeData = homeData else {return header}
+        header.bindData(title: homeData.data[indexPath.section].sectionTitle)
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let homeData = homeData else {return 0}
         if section == 0 {
             return 1
         } else {
-            return homeMokData.data[section].data.count
+            return homeData.data[section].data.count
         }
     }
     
@@ -193,26 +243,30 @@ extension HomeVC: UICollectionViewDataSource {
         guard let liveChanelCell = collectionView.dequeueReusableCell(withReuseIdentifier: LiveChannelCVC.identifier, for: indexPath) as? LiveChannelCVC else {return UICollectionViewCell()}
         guard let bannerCell = collectionView.dequeueReusableCell(withReuseIdentifier: BannerCVC.identifier, for: indexPath) as? BannerCVC else {return UICollectionViewCell()}
         
-        let data = homeMokData.data[indexPath.section].data[indexPath.row]
-        switch indexPath.section {
-        case 0:
-            caroucell.bindData(data: homeMokData.data[indexPath.section].data)
-            return caroucell
-        case 1, 3, 5:
-            seriesCell.bindData(image: data.image,
-                                title: data.title)
-            return seriesCell
-        case 2:
-            if let rank = data.rank, let maker = data.maker, let rating = data.rating {
-                liveChanelCell.bindData(image: data.image,
-                                        rank: rank,
-                                        makers: maker,
-                                        title: data.title,
-                                        rating: rating)
+        if let homeData = homeData {
+            let data = homeData.data[indexPath.section].data[indexPath.row]
+            switch indexPath.section {
+            case 0:
+                caroucell.bindData(data: homeData.data[indexPath.section].data)
+                return caroucell
+            case 1, 3, 5:
+                seriesCell.bindData(image: data.image,
+                                    title: data.title)
+                return seriesCell
+            case 2:
+                if let rank = data.rank, let maker = data.maker, let rating = data.rating {
+                    liveChanelCell.bindData(image: data.image,
+                                            rank: rank,
+                                            makers: maker,
+                                            title: data.title,
+                                            rating: rating)
+                }
+                return liveChanelCell
+            default:
+                return bannerCell
             }
-            return liveChanelCell
-        default:
-            return bannerCell
+        } else {
+            return UICollectionViewCell()
         }
     }
     

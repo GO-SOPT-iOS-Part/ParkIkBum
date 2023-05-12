@@ -11,7 +11,7 @@ struct HomeData {
 }
 
 struct dataClass {
-    let image: UIImage
+    let image: String
     let title: String
     let rank: Int?
     let maker: String?

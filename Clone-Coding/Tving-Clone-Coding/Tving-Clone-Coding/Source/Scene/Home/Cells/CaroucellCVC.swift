@@ -1,4 +1,5 @@
 import UIKit
+import Kingfisher
 
 class CaroucellCVC: UICollectionViewCell {
     static let identifier: String = "CaroucellCVC"
@@ -16,8 +17,9 @@ class CaroucellCVC: UICollectionViewCell {
         self.thumbnailImageView.image = nil
     }
     
-    internal func bindData(image: UIImage) {
-        self.thumbnailImageView.image = image
+    internal func bindData(image: String) {
+        guard let url = URL(string: image) else {return}
+        self.thumbnailImageView.kf.setImage(with: url)
     }
     
     private func setLayout() {

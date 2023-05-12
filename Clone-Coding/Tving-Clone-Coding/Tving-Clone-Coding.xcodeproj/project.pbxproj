@@ -49,7 +49,7 @@
 		36E60FCA2A042FAF000FBCBC /* BannerCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FC92A042FAF000FBCBC /* BannerCVC.swift */; };
 		36E60FCC2A042FD1000FBCBC /* SeriesVideoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FCB2A042FD1000FBCBC /* SeriesVideoCVC.swift */; };
 		36E60FCF2A04399A000FBCBC /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FCE2A04399A000FBCBC /* HomeDataModel.swift */; };
-		36E60FD12A043A81000FBCBC /* HomeMokData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FD02A043A81000FBCBC /* HomeMokData.swift */; };
+		36E60FD12A043A81000FBCBC /* MovieDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FD02A043A81000FBCBC /* MovieDataModel.swift */; };
 		36E60FD42A050998000FBCBC /* CaroucellCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FD32A050998000FBCBC /* CaroucellCVC.swift */; };
 		36E60FD92A052A04000FBCBC /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FD82A052A04000FBCBC /* HomeNavigationView.swift */; };
 		36E60FDC2A052D67000FBCBC /* MyPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FDB2A052D67000FBCBC /* MyPageVC.swift */; };
@@ -60,6 +60,11 @@
 		36E60FE72A053B6E000FBCBC /* MyPageMokData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FE62A053B6E000FBCBC /* MyPageMokData.swift */; };
 		36E60FE92A054D69000FBCBC /* MyPageSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FE82A054D69000FBCBC /* MyPageSectionHeader.swift */; };
 		36E60FEB2A054DBE000FBCBC /* MyPageFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E60FEA2A054DBE000FBCBC /* MyPageFooterView.swift */; };
+		36FCD7D12A0E6A3C0038FD91 /* NetworResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7CE2A0E6A3C0038FD91 /* NetworResult.swift */; };
+		36FCD7D22A0E6A3C0038FD91 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7CF2A0E6A3C0038FD91 /* Config.swift */; };
+		36FCD7D52A0E6B2B0038FD91 /* GetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCD7D42A0E6B2B0038FD91 /* GetService.swift */; };
+		36FCD7D82A0E6C960038FD91 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 36FCD7D72A0E6C960038FD91 /* Alamofire */; };
+		36FCD7DB2A0E74B00038FD91 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 36FCD7DA2A0E74B00038FD91 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,7 +110,7 @@
 		36E60FC92A042FAF000FBCBC /* BannerCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCVC.swift; sourceTree = "<group>"; };
 		36E60FCB2A042FD1000FBCBC /* SeriesVideoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesVideoCVC.swift; sourceTree = "<group>"; };
 		36E60FCE2A04399A000FBCBC /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
-		36E60FD02A043A81000FBCBC /* HomeMokData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMokData.swift; sourceTree = "<group>"; };
+		36E60FD02A043A81000FBCBC /* MovieDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataModel.swift; sourceTree = "<group>"; };
 		36E60FD32A050998000FBCBC /* CaroucellCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaroucellCVC.swift; sourceTree = "<group>"; };
 		36E60FD82A052A04000FBCBC /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
 		36E60FDB2A052D67000FBCBC /* MyPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageVC.swift; sourceTree = "<group>"; };
@@ -116,6 +121,9 @@
 		36E60FE62A053B6E000FBCBC /* MyPageMokData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMokData.swift; sourceTree = "<group>"; };
 		36E60FE82A054D69000FBCBC /* MyPageSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSectionHeader.swift; sourceTree = "<group>"; };
 		36E60FEA2A054DBE000FBCBC /* MyPageFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageFooterView.swift; sourceTree = "<group>"; };
+		36FCD7CE2A0E6A3C0038FD91 /* NetworResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworResult.swift; sourceTree = "<group>"; };
+		36FCD7CF2A0E6A3C0038FD91 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		36FCD7D42A0E6B2B0038FD91 /* GetService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FCD7DB2A0E74B00038FD91 /* Kingfisher in Frameworks */,
+				36FCD7D82A0E6C960038FD91 /* Alamofire in Frameworks */,
 				3638ED7529EA7B9F00BEC54D /* SnapKit in Frameworks */,
 				3638ED7829EA7BB200BEC54D /* Then in Frameworks */,
 			);
@@ -151,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				3638ED7929EA7BBF00BEC54D /* Source */,
-				3638ED7A29EA7BC500BEC54D /* Resource */,
 				3638ED6D29EA7B5C00BEC54D /* Info.plist */,
 			);
 			path = "Tving-Clone-Coding";
@@ -160,6 +169,7 @@
 		3638ED7929EA7BBF00BEC54D /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				36FCD7CD2A0E6A270038FD91 /* Service */,
 				36E60FCD2A04398C000FBCBC /* Models */,
 				3638ED9229EA808100BEC54D /* Utils */,
 				3638ED8129EA7E7600BEC54D /* Components */,
@@ -186,6 +196,7 @@
 			children = (
 				3638ED5F29EA7B5A00BEC54D /* AppDelegate.swift */,
 				3638ED6129EA7B5A00BEC54D /* SceneDelegate.swift */,
+				3638ED7A29EA7BC500BEC54D /* Resource */,
 			);
 			path = Supports;
 			sourceTree = "<group>";
@@ -347,7 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				36E60FCE2A04399A000FBCBC /* HomeDataModel.swift */,
-				36E60FD02A043A81000FBCBC /* HomeMokData.swift */,
+				36E60FD02A043A81000FBCBC /* MovieDataModel.swift */,
 				36E60FE42A053B34000FBCBC /* MyPageDataModel.swift */,
 				36E60FE62A053B6E000FBCBC /* MyPageMokData.swift */,
 			);
@@ -382,6 +393,16 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		36FCD7CD2A0E6A270038FD91 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				36FCD7CF2A0E6A3C0038FD91 /* Config.swift */,
+				36FCD7CE2A0E6A3C0038FD91 /* NetworResult.swift */,
+				36FCD7D42A0E6B2B0038FD91 /* GetService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -401,6 +422,8 @@
 			packageProductDependencies = (
 				3638ED7429EA7B9F00BEC54D /* SnapKit */,
 				3638ED7729EA7BB200BEC54D /* Then */,
+				36FCD7D72A0E6C960038FD91 /* Alamofire */,
+				36FCD7DA2A0E74B00038FD91 /* Kingfisher */,
 			);
 			productName = "Tving-Clone-Coding";
 			productReference = 3638ED5C29EA7B5A00BEC54D /* Tving-Clone-Coding.app */;
@@ -433,6 +456,8 @@
 			packageReferences = (
 				3638ED7329EA7B9F00BEC54D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				3638ED7629EA7BB200BEC54D /* XCRemoteSwiftPackageReference "Then" */,
+				36FCD7D62A0E6C960038FD91 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				36FCD7D92A0E74B00038FD91 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3638ED5D29EA7B5A00BEC54D /* Products */;
 			projectDirPath = "";
@@ -469,7 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36E60FD12A043A81000FBCBC /* HomeMokData.swift in Sources */,
+				36E60FD12A043A81000FBCBC /* MovieDataModel.swift in Sources */,
 				3638ED8D29EA7FD300BEC54D /* NavigationView.swift in Sources */,
 				3638ED9129EA807700BEC54D /* UIFont+.swift in Sources */,
 				3638EDB729EA8F2500BEC54D /* EmailTextField.swift in Sources */,
@@ -484,7 +509,9 @@
 				3638ED8329EA7E8400BEC54D /* UIView+.swift in Sources */,
 				3638EDF929F2D77100BEC54D /* MakeNickNameVC.swift in Sources */,
 				36E60FEB2A054DBE000FBCBC /* MyPageFooterView.swift in Sources */,
+				36FCD7D12A0E6A3C0038FD91 /* NetworResult.swift in Sources */,
 				3638ED8529EA7EE000BEC54D /* UITextField+.swift in Sources */,
+				36FCD7D22A0E6A3C0038FD91 /* Config.swift in Sources */,
 				36E60FCF2A04399A000FBCBC /* HomeDataModel.swift in Sources */,
 				3638EDC429EAA67C00BEC54D /* UIStackView+.swift in Sources */,
 				36E60FE72A053B6E000FBCBC /* MyPageMokData.swift in Sources */,
@@ -498,6 +525,7 @@
 				3638EDC229EA9EE700BEC54D /* LoginView.swift in Sources */,
 				36E60FC62A042F46000FBCBC /* HomeCaroucellCVC.swift in Sources */,
 				3638ED6229EA7B5A00BEC54D /* SceneDelegate.swift in Sources */,
+				36FCD7D52A0E6B2B0038FD91 /* GetService.swift in Sources */,
 				36E60FE32A0535B4000FBCBC /* MyPageTVC.swift in Sources */,
 				3638EDBF29EA9BB700BEC54D /* UIButton+.swift in Sources */,
 				36E60FE52A053B34000FBCBC /* MyPageDataModel.swift in Sources */,
@@ -734,6 +762,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		36FCD7D62A0E6C960038FD91 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		36FCD7D92A0E74B00038FD91 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,6 +790,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3638ED7629EA7BB200BEC54D /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		36FCD7D72A0E6C960038FD91 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36FCD7D62A0E6C960038FD91 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		36FCD7DA2A0E74B00038FD91 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 36FCD7D92A0E74B00038FD91 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

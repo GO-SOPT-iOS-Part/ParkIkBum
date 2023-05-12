@@ -1,11 +1,5 @@
-//
-//  LiveChannelCVC.swift
-//  Tving-Clone-Coding
-//
-//  Created by 박익범 on 2023/05/05.
-//
-
 import UIKit
+import Kingfisher
 
 class LiveChannelCVC: UICollectionViewCell {
     static let identifier: String = "LiveChannelCVC"
@@ -26,13 +20,14 @@ class LiveChannelCVC: UICollectionViewCell {
         self.ratingLabel.text = ""
     }
     
-    internal func bindData(image: UIImage,
+    internal func bindData(image: String,
                            rank: Int,
                            makers: String,
                            title: String,
                            rating: Float) {
+        guard let url = URL(string: image) else {return}
+        self.thumbnailImageview.kf.setImage(with: url)
         self.titleLabel.text = title
-        self.thumbnailImageview.image = image
         self.rankNumLabel.text = "\(rank)"
         self.makersLabel.text = makers
         self.ratingLabel.text = "\(rating)%"

@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BASE_IMAGE_URL</key>
+	<string>https://image.tmdb.org/t/p/original</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>API_KEY</key>
+	<string>eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZGJlMjZlYzVlMmQ5OWY5N2JlOGQ4MjUyYjBhOGZjYyIsInN1YiI6IjY0NWUyZmUxZjkwYjE5MDE1NTQxNWRmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4wq91HUy_agx3-cDh-pnm0r7uTjwf5pmZC4J6tWcLjY</string>
+	<key>BASE_URL</key>
+	<string>https://api.themoviedb.org</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Black.otf</string>
